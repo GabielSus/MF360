@@ -1,0 +1,26 @@
+# Node
+node_modules/
+
+# Expo
+.expo/
+
+# React
+dist/
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# VSCode
+.vscode/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Videos temporales
+storage/events/*/raw/*
+storage/events/*/processing/*
+storage/events/*/final/*
