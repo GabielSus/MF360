@@ -1,6 +1,34 @@
 const fs = require("fs");
 const path = require("path");
 
+exports.getEvents = async (req, res) => {
+
+    try {
+
+        const eventsPath = path.join(
+            process.cwd(),
+            "storage",
+            "events"
+        );
+
+        const events = fs.readdirSync(eventsPath);
+
+        return res.json({
+            success: true,
+            events
+        });
+
+    } catch (error) {
+
+        return res.status(500).json({
+            success: false,
+            message: error.message
+        });
+
+    }
+
+};
+
 const createEvent = (req, res) => {
 
     try {
@@ -52,5 +80,6 @@ const createEvent = (req, res) => {
 };
 
 module.exports = {
-    createEvent
+    createEvent,
+    getEvents: exports.getEvents
 };
