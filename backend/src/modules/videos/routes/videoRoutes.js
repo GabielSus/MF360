@@ -8,8 +8,12 @@ const fs = require("fs");
 
 const router = express.Router();
 
+
+// Este es el Import
 const {
-    uploadVideo
+    uploadVideo,
+    getVideos,
+    getVideosCount
 } = require("../controllers/videoController");
 
 
@@ -45,6 +49,16 @@ const storage = multer.diskStorage({
     }
 
 });
+
+router.get(
+    "/list/:eventName",
+    getVideos
+);
+
+router.get(
+    "/count/:eventName",
+    getVideosCount
+);
 
 const upload = multer({ storage });
 

@@ -1,5 +1,5 @@
-import CameraScreen from "./src/screens/CameraScreen";
+import EventListScreen from "./src/screens/EventListScreen";
 
 export default function App() {
-  return <CameraScreen />;
+  return <EventListScreen />;
 }
